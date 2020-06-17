@@ -20,7 +20,7 @@ stream=p.open(
         channels=1,
         rate=8000,
         output=True,
-        output_device_index=2
+        output_device_index=1
         )
 # Called when a client sends a message
 def message_received(client, server, message):

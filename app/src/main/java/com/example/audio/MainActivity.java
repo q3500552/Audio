@@ -4,34 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import pub.devrel.easypermissions.EasyPermissions;
 
 import android.Manifest;
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Message;
-import android.os.ParcelFileDescriptor;
-import android.provider.MediaStore;
-import android.text.TextUtils;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.Socket;
 import java.net.URI;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 public class MainActivity extends AppCompatActivity {
     public static WebSocketClient webSocketClient;
@@ -47,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, 8000, 1, AudioFormat.ENCODING_PCM_16BIT, 1024);
 
         try {
-            webSocketClient = new WebSocketClient(URI.create("ws://10.9.144.87:9001/websocket")) {
+            webSocketClient = new WebSocketClient(URI.create("ws://192.168.0.5:9001/websocket")) {
                 @Override
                 public void onOpen(ServerHandshake handshakedata) {
 
